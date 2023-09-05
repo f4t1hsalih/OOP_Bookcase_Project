@@ -37,6 +37,8 @@
             txtAuthor = new TextBox();
             btnList = new Button();
             btnSave = new Button();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(413, 284);
+            dataGridView1.Size = new Size(440, 284);
             dataGridView1.TabIndex = 0;
             // 
             // lblBookName
@@ -106,7 +108,7 @@
             // btnList
             // 
             btnList.ForeColor = Color.FromArgb(46, 51, 72);
-            btnList.Location = new Point(304, 291);
+            btnList.Location = new Point(231, 292);
             btnList.Name = "btnList";
             btnList.Size = new Size(97, 33);
             btnList.TabIndex = 5;
@@ -117,7 +119,7 @@
             // btnSave
             // 
             btnSave.ForeColor = Color.FromArgb(46, 51, 72);
-            btnSave.Location = new Point(304, 330);
+            btnSave.Location = new Point(231, 331);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(97, 33);
             btnSave.TabIndex = 6;
@@ -125,13 +127,35 @@
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
+            // button1
+            // 
+            button1.ForeColor = Color.FromArgb(46, 51, 72);
+            button1.Location = new Point(334, 331);
+            button1.Name = "button1";
+            button1.Size = new Size(97, 33);
+            button1.TabIndex = 8;
+            button1.Text = "Kaydet";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.ForeColor = Color.FromArgb(46, 51, 72);
+            button2.Location = new Point(334, 292);
+            button2.Name = "button2";
+            button2.Size = new Size(97, 33);
+            button2.TabIndex = 7;
+            button2.Text = "Listele";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(108, 138, 175);
-            ClientSize = new Size(413, 376);
+            ClientSize = new Size(441, 376);
+            Controls.Add(button1);
+            Controls.Add(button2);
             Controls.Add(btnSave);
             Controls.Add(btnList);
             Controls.Add(txtAuthor);
@@ -160,5 +184,7 @@
         private TextBox txtAuthor;
         private Button btnList;
         private Button btnSave;
+        private Button button1;
+        private Button button2;
     }
 }
