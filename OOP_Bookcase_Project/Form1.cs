@@ -20,6 +20,11 @@ namespace OOP_Bookcase_Project
         private void btnList_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = bookDB.Listele();
+
+            // DataGridView kolon isimlerini özelleþtirme
+            dataGridView1.Columns["id"].HeaderText = "ID";
+            dataGridView1.Columns["name"].HeaderText = "Kitap Adý";
+            dataGridView1.Columns["author"].HeaderText = "Yazar";
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

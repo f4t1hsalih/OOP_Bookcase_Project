@@ -11,7 +11,7 @@ namespace OOP_Bookcase_Project
             List<Book> book = new List<Book>();
 
             connection.Open();
-            string command = "Select id as 'ID', book_name as 'Kitap Adı', author as 'Yazar' from tbl_Books";
+            string command = "Select id, book_name, author from tbl_Books";
             OleDbCommand cmd = new OleDbCommand(command, connection);
             OleDbDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -49,7 +49,7 @@ namespace OOP_Bookcase_Project
             cmd.Parameters.AddWithValue("@p3", book.id);
             cmd.ExecuteNonQuery();
             connection.Close();
-            MessageBox.Show("Kitap Başarıyla Güncelleni");
+            MessageBox.Show("Kitap Başarıyla Güncellendi");
         }
 
         public void DeleteBook(Book book)
