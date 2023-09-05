@@ -37,7 +37,6 @@ namespace OOP_Bookcase_Project
             cmd.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Kitap Başarıyla Kaydedildi");
-            Listele();
         }
 
         public void UpdateBook(Book book)
@@ -51,7 +50,6 @@ namespace OOP_Bookcase_Project
             cmd.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Kitap Başarıyla Güncelleni");
-            Listele();
         }
 
     }
