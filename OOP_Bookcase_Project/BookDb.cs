@@ -6,7 +6,7 @@ namespace OOP_Bookcase_Project
     {
         OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Yazilim\\C#\\OOP_Bookcase_Project\\OOP_Bookcase_Project\\krsDbBookcase.accdb");
 
-        public List<Book> Liste()
+        public List<Book> Listele()
         {
             List<Book> book = new List<Book>();
 
@@ -37,6 +37,22 @@ namespace OOP_Bookcase_Project
             cmd.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Kitap Başarıyla Kaydedildi");
+            Listele();
         }
+
+        public void UpdateBook(Book book)
+        {
+            connection.Open();
+            string command = "Update tbl_books set book_name=@p1, author=@p2 where id=@p3";
+            OleDbCommand cmd = new OleDbCommand(command, connection);
+            cmd.Parameters.AddWithValue("@p1", book.name);
+            cmd.Parameters.AddWithValue("@p2", book.author);
+            cmd.Parameters.AddWithValue("@p3", book.id);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Kitap Başarıyla Güncelleni");
+            Listele();
+        }
+
     }
 }

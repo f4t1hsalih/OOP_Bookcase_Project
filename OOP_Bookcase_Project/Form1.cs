@@ -7,6 +7,7 @@ namespace OOP_Bookcase_Project
             InitializeComponent();
         }
 
+        int id;
         BookDb bookDB = new BookDb();
 
         private void Clean()
@@ -17,7 +18,7 @@ namespace OOP_Bookcase_Project
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bookDB.Liste();
+            dataGridView1.DataSource = bookDB.Listele();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -32,6 +33,25 @@ namespace OOP_Bookcase_Project
             ktp.author = txtAuthor.Text;
             bookDB.AddBook(ktp);
             Clean();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Book book = new Book();
+            book.id = this.id;
+            book.name = txtBookName.Text;
+            book.author = txtAuthor.Text;
+            bookDB.UpdateBook(book);
+            Clean();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selected = dataGridView1.SelectedCells[0].RowIndex;
+
+            id = Convert.ToInt16(dataGridView1.Rows[selected].Cells[0].Value.ToString());
+            txtBookName.Text = dataGridView1.Rows[selected].Cells[1].Value.ToString();
+            txtAuthor.Text = dataGridView1.Rows[selected].Cells[2].Value.ToString();
         }
     }
 }
