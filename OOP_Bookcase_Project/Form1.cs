@@ -33,7 +33,7 @@ namespace OOP_Bookcase_Project
             ktp.author = txtAuthor.Text;
             bookDB.AddBook(ktp);
             Clean();
-            bookDB.Listele();
+            dataGridView1.DataSource = bookDB.Listele();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace OOP_Bookcase_Project
             book.author = txtAuthor.Text;
             bookDB.UpdateBook(book);
             Clean();
-            bookDB.Listele();
+            dataGridView1.DataSource = bookDB.Listele();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

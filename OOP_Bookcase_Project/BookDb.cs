@@ -11,7 +11,7 @@ namespace OOP_Bookcase_Project
             List<Book> book = new List<Book>();
 
             connection.Open();
-            string command = "Select * from tbl_Books";
+            string command = "Select id as 'ID', book_name as 'Kitap Adı', author as 'Yazar' from tbl_Books";
             OleDbCommand cmd = new OleDbCommand(command, connection);
             OleDbDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -31,7 +31,7 @@ namespace OOP_Bookcase_Project
         {
             connection.Open();
             string command = "insert into tbl_Books(book_name, author) values (@p1, @p2)";
-            OleDbCommand cmd= new OleDbCommand(command, connection);
+            OleDbCommand cmd = new OleDbCommand(command, connection);
             cmd.Parameters.AddWithValue("@p1", book.name);
             cmd.Parameters.AddWithValue("@p2", book.author);
             cmd.ExecuteNonQuery();
