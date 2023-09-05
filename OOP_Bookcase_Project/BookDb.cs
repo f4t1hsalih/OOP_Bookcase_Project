@@ -26,5 +26,17 @@ namespace OOP_Bookcase_Project
             connection.Close();
             return book;
         }
+
+        public void AddBook(Book book)
+        {
+            connection.Open();
+            string command = "insert into tbl_Books(book_name, author) values (@p1, @p2)";
+            OleDbCommand cmd= new OleDbCommand(command, connection);
+            cmd.Parameters.AddWithValue("@p1", book.name);
+            cmd.Parameters.AddWithValue("@p2", book.author);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Kitap Başarıyla Kaydedildi");
+        }
     }
 }
