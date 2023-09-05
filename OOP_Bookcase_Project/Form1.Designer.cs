@@ -122,6 +122,7 @@
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.FromArgb(231, 229, 172);
             Margin = new Padding(4, 4, 4, 4);
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Kitaplık";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
