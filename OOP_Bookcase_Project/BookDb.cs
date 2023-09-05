@@ -52,5 +52,16 @@ namespace OOP_Bookcase_Project
             MessageBox.Show("Kitap Başarıyla Güncelleni");
         }
 
+        public void DeleteBook(Book book)
+        {
+            connection.Open();
+            string command = "Delete from tbl_books where id=@p1";
+            OleDbCommand cmd = new OleDbCommand(command, connection);
+            cmd.Parameters.AddWithValue("@p1", book.id);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Kayıt Başarıyla Silindi");
+        }
+
     }
 }

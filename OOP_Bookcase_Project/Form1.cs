@@ -12,6 +12,7 @@ namespace OOP_Bookcase_Project
 
         private void Clean()
         {
+            id = 0;
             txtBookName.Clear();
             txtAuthor.Clear();
         }
@@ -54,6 +55,15 @@ namespace OOP_Bookcase_Project
             id = Convert.ToInt16(dataGridView1.Rows[selected].Cells[0].Value.ToString());
             txtBookName.Text = dataGridView1.Rows[selected].Cells[1].Value.ToString();
             txtAuthor.Text = dataGridView1.Rows[selected].Cells[2].Value.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Book book = new Book();
+            book.id = this.id;
+            bookDB.DeleteBook(book);
+            Clean();
+            dataGridView1.DataSource = bookDB.Listele();
         }
     }
 }
