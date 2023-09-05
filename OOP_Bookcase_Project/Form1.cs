@@ -9,6 +9,12 @@ namespace OOP_Bookcase_Project
 
         BookDb bookDB = new BookDb();
 
+        private void Clean()
+        {
+            txtBookName.Clear();
+            txtAuthor.Clear();
+        }
+
         private void btnList_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = bookDB.Liste();
@@ -25,6 +31,7 @@ namespace OOP_Bookcase_Project
             ktp.name = txtBookName.Text;
             ktp.author = txtAuthor.Text;
             bookDB.AddBook(ktp);
+            Clean();
         }
     }
 }
