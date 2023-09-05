@@ -42,7 +42,7 @@ namespace OOP_Bookcase_Project
         public void UpdateBook(Book book)
         {
             connection.Open();
-            string command = "Update tbl_books set book_name=@p1, author=@p2 where id=@p3";
+            string command = "Update tbl_Books set book_name=@p1, author=@p2 where id=@p3";
             OleDbCommand cmd = new OleDbCommand(command, connection);
             cmd.Parameters.AddWithValue("@p1", book.name);
             cmd.Parameters.AddWithValue("@p2", book.author);
@@ -55,7 +55,7 @@ namespace OOP_Bookcase_Project
         public void DeleteBook(Book book)
         {
             connection.Open();
-            string command = "Delete from tbl_books where id=@p1";
+            string command = "Delete from tbl_Books where id=@p1";
             OleDbCommand cmd = new OleDbCommand(command, connection);
             cmd.Parameters.AddWithValue("@p1", book.id);
             cmd.ExecuteNonQuery();
