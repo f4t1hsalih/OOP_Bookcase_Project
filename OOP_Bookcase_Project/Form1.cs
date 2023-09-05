@@ -18,5 +18,13 @@ namespace OOP_Bookcase_Project
         {
             Application.Exit();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Book ktp = new Book();
+            ktp.name = txtBookName.Text;
+            ktp.author = txtAuthor.Text;
+            bookDB.AddBook(ktp);
+        }
     }
 }
